@@ -56,7 +56,7 @@ function draw() {
   //dividindo o score entre os quadros
   score = score + frameCount/60;
   //a função Math.round() para arredondar.
-  //score = score + Math.round(frameCount()/60);
+  //score = score + Math.round(frameCount/60);
 
  // condição de estado
   if(gameState===PLAY){
@@ -67,32 +67,23 @@ function draw() {
 
 
 
-//2 E quanto ao salto e à gravidade? Queremos que o T-Rex salte quando o estado do jogo for END? 
 
-
-//3 Redefina a posição do solo: colocar dentro do estado play
+//2 Redefina a posição do solo: colocar dentro do estado play
 
 
 
 
-//4 Mova o código “pular e gravidade” dentro do estado PLAY
+//3 Mova o código “pular e gravidade” dentro do estado PLAY
 
 
   
 
-
-//5 Mova o código de solo invisível para fora do bloco, pois ele é necessário para apoiar o T-Rex o tempo todo.
-
-  
+//5 Mova spawnClouds() e spawnObstacles() para dentro do condicional PLAY.
 
 
-//6 Mova spawnClouds() e spawnObstacles() para dentro do condicional PLAY.
-
-
-
-   
 
 }
+   //6 Mova o código de solo invisível para fora do bloco play e dentro do draw, pois ele é necessário para apoiar o T-Rex o tempo todo.
   else if(gameState===END){
   //mover o solo
   ground.velocityX= 0;
@@ -110,7 +101,7 @@ function draw() {
   if (ground.x < 0){
     ground.x = ground.width/2;
   }
-  
+  //6
   trex.collide(invisibleGround);
   
   //gerar as nuvens
